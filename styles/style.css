@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@300&family=Permanent+Marker&display=swap");
+
+@font-face {
+  font-family: "QuranSurah";
+  src: url("./fonts/Mcs_Swer_Al_Quran_2.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.searchArea {
+  position: relative;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+}
+#search {
+  width: 40%;
+  padding: 22px 55px;
+  margin-top: 30px;
+  border: 1px solid #ced4da;
+  background-color: #f8f9fa;
+  border-radius: 0.25px;
+  font-size: 20px;
+}
+#search:focus {
+  color: #495057;
+  background-color: #f8f9fa;
+  border-color: #42eaff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 172, 193, 0.25);
+}
+#loader {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  display: none;
+}
