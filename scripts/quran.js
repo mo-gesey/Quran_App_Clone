@@ -11,14 +11,32 @@ const buildDom = (surahEng, surahArb, surahNumb) => {
         </div>`;
 };
 
+const searchSurah = (e) => {
+  let surahInfo = document.querySelectorAll(".surah-info");
+  let term = e.target.value.toUpperCase();
+
+  surahInfo.forEach((surah) => {
+    let surahEn = surah.querySelector("#surah-eng").innerText.toUpperCase();
+    let surahAr = surah.querySelector("#surah-arb").innerText.toUpperCase();
+
+    if (surahEn.indexOf(term) > -1 || surahAr.indexOf(term) > -1) {
+      surah.style.display = "flex";
+    } else {
+      surah.style.display = "none";
+    }
+  });
+  console.log(term);
+};
+
 // Getting All 114 surah
 const getAllSurah = async () => {
   let response = await fetch("http://api.alquran.cloud/v1/quran/quran-uthmani");
   let surah = await response.json();
   surah.data.surahs.forEach((sura) => {
-    console.log(sura);
+    //console.log(sura);
     buildDom(sura.englishName, sura.name, sura.number);
   });
 };
 
 getAllSurah();
+document.addEventListener("input", searchSurah);

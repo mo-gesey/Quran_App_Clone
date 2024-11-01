@@ -24,7 +24,7 @@ body {
   flex-direction: row;
 }
 #search {
-  width: 40%;
+  width: 100%;
   padding: 22px 55px;
   margin-top: 30px;
   border: 1px solid #ced4da;
