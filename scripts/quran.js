@@ -7,8 +7,8 @@ let loader = document.querySelector("#loader");
 const buildDom = (surahEng, surahArb, surahNumb) => {
   container.innerHTML += `<div class="surah-info">
             <div class="surah-names">
-                <a href="" id="surah-eng">${surahEng}</a>
-                <a href="" id="surah-arb">${surahArb}</a>
+                <a href="http://127.0.0.1:5500/tafsir.html?id=${surahNumb}" id="surah-eng">${surahEng}</a>
+                <a href="http://127.0.0.1:5500/tafsir.html?id=${surahNumb}" id="surah-arb">${surahArb}</a>
             </div>
             <span id="ayah-number">${surahNumb}</span>
         </div>`;
