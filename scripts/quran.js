@@ -1,4 +1,7 @@
 let container = document.querySelector(".container");
+let loader = document.querySelector("#loader");
+
+
 
 //building Doms
 const buildDom = (surahEng, surahArb, surahNumb) => {
@@ -30,8 +33,11 @@ const searchSurah = (e) => {
 
 // Getting All 114 surah
 const getAllSurah = async () => {
+  loader.style.display = 'block'
   let response = await fetch("http://api.alquran.cloud/v1/quran/quran-uthmani");
   let surah = await response.json();
+  loader.style.display = 'none'
+
   surah.data.surahs.forEach((sura) => {
     //console.log(sura);
     buildDom(sura.englishName, sura.name, sura.number);
